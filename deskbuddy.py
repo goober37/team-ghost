@@ -25,14 +25,15 @@ while running:
 
     #fill the screen with a color to wipe away anything from last frame
     #screen.fill("purple")
+    rendghost.makeWind(ghox, ghoy)
+
     if pygame.mixer.get_init() == False:
         pygame.mixer.init()
         pygame.mixer.music.load("spooktune.mp3")
-    pygame.mixer.music.play(-1)
+        pygame.mixer.music.play(-1)
 
-    rendghost.makeWind(ghox, ghoy)
-    ghox = ghox + np.random.randint(-20,20)
-    ghoy = ghoy + np.random.randint(-20,20)
+    ghox = ghox + np.random.randint(-30,30)
+    ghoy = ghoy + np.random.randint(-30,30)
 
     clock.tick(30)  # limits FPS to 30
 

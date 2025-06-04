@@ -19,7 +19,7 @@ def makeWind(x=0,y=0):
     # flip() the display to put your work on screen
     pygame.display.flip()
 
-    pygame.time.wait(500)
+    pygame.time.wait(300)
     #for keys in pygame.key.get_pressed():
     #    if 
     pygame.quit()
