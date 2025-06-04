@@ -6,6 +6,8 @@ import os
 import rendghost
 import numpy as np
 
+#test
+
 # pygame setup
 pygame.init()
 screen = pygame.display.set_mode((1,1))
