@@ -1,8 +1,9 @@
 import pygame
 import os
 
+spaceHeld = False
+
 def makeWind(x=0,y=0):
-    spaceHeld = False
 
     if type(x) == tuple and y == 0:
         print("you've tupled!")
@@ -22,11 +23,13 @@ def makeWind(x=0,y=0):
     pygame.display.flip()
 
     pygame.time.wait(300)
-    if pygame.key.get_pressed[pygame.K_SPACE] and spaceHeld:
-        pygame.quit()
-    elif pygame.key.get_pressed[pygame.K_SPACE] and not spaceHeld:
+    if pygame.key.get_pressed()[pygame.K_SPACE] and spaceHeld:
+        print("bye")
+        return False
+    elif pygame.key.get_pressed()[pygame.K_SPACE] and not spaceHeld:
         spaceHeld = True
-    elif not pygame.key.get_pressed[pygame.K_SPACE]:
+        print("once")
+    elif not pygame.key.get_pressed()[pygame.K_SPACE]:
         spaceHeld = False
-
-    pygame.quit()
+        print("no")
+    return True
