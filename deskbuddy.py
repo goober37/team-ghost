@@ -13,8 +13,8 @@ pygame.init()
 screen = pygame.display.set_mode((1,1))
 clock = pygame.time.Clock()
 running = True
-bigx, bigy = pygame.display.get_desktop_sizes()[0]
-ghox, ghoy = bigx/2, bigy/2
+bigx,bigy = pygame.display.get_desktop_sizes()[0]
+ghox, ghoy = bigx/2,bigy/2
 
 # --- MUSIC SETUP: Only run this ONCE before the loop ---
 if not pygame.mixer.get_init():
