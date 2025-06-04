@@ -2,7 +2,6 @@ import pygame
 import os
 
 def makeWind(x=0,y=0):
-    pygame.mixer.init()
     if type(x) == tuple and y == 0:
         print("you've tupled!")
         x,y = list(x)
