@@ -1,9 +1,6 @@
 import pygame
 import os
 
-def init():
-    spaceHeld = False
-
 def makeWind(x=0,y=0):
 
     if type(x) == tuple and y == 0:

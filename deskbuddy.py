@@ -15,6 +15,7 @@ clock = pygame.time.Clock()
 running = True
 bigx,bigy = pygame.display.get_desktop_sizes()[0]
 ghox, ghoy = bigx/2,bigy/2
+spaceHeld = False
 
 while running:
     # poll for events
