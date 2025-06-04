@@ -25,9 +25,9 @@ while running:
 
     #fill the screen with a color to wipe away anything from last frame
     #screen.fill("purple")
-    pygame.mixer.init()
-    pygame.mixer.music.load("spooktune.mp3")
-    #if pygame.mixer.music.get_busy() == False:
+    if pygame.mixer.get_init() == False:
+        pygame.mixer.init()
+        pygame.mixer.music.load("spooktune.mp3")
     pygame.mixer.music.play(-1)
 
     rendghost.makeWind(ghox, ghoy)
