@@ -1,7 +1,8 @@
 import pygame
 import os
 
-spaceHeld = False
+def init():
+    spaceHeld = False
 
 def makeWind(x=0,y=0):
 
