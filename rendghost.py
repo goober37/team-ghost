@@ -4,7 +4,7 @@ import praise
 
 spaceHeld = False
 
-def makeWind(x=0, y=0):
+def makeWind(x=0, y=0, image="ghost.png"):
 
     if type(x) == tuple and y == 0:
         print("you've tupled!")
@@ -16,7 +16,7 @@ def makeWind(x=0, y=0):
     pygame.display.set_icon(pygame.image.load("icon.png"))
 
     # RENDER YOUR GAME HERE
-    ghost = pygame.image.load("ghost.png").convert()
+    ghost = pygame.image.load(image).convert()
     screen.blit(ghost, (0, 0))
     pygame.display.set_caption("Ghost (spooky)")
 
