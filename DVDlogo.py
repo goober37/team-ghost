@@ -8,7 +8,7 @@ clock = pg.time.Clock()
 boundx, boundy = pg.display.get_window_size()
 running = True
 textvel = [10,10]
-debug = "yes"
+debug = "no"
 
 #math the font
 font = pg.font.Font(None, 64)
