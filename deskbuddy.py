@@ -28,9 +28,6 @@ while running:
     ghop, ghov = dvd.bounceInner(screenborders, ghop, ghov)
     #make the ghost window
     rendghost.makeWind(ghop[0], ghop[1])
-
-    with open("running.txt", "r", encoding="utf-8") as f:
-        running = f
     
     clock.tick(30)  # limits FPS to 30
 
