@@ -27,7 +27,9 @@ while running:
     #     if event.type == pygame.QUIT:
     #         running = False
 
-    running = rendghost.makeWind(ghox, ghoy)
+    running = 
+    rendghost.makeWind(ghox, ghoy)
+    praise.PraiseUser()
 
     ghox = ghox + np.random.randint(-30,30)
     ghoy = ghoy + np.random.randint(-30,30)

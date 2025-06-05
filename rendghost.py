@@ -5,7 +5,6 @@ spaceHeld = False
 screen = None  
 
 def makeWind(x=0, y=0):
-    global spaceHeld, screen
 
     if type(x) == tuple and y == 0:
         print("you've tupled!")
