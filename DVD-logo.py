@@ -44,5 +44,5 @@ while running:
     pg.draw.circle(screen,"green",(textpos[0],textpos[1]),3)
     #cleanup
     pg.display.flip()
-    clock.tick(2)
+    clock.tick(30)
 pg.quit()
