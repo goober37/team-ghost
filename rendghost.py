@@ -2,7 +2,6 @@ import pygame
 import os
 
 spaceHeld = False
-screen = None  
 
 def makeWind(x=0, y=0):
 
@@ -12,9 +11,8 @@ def makeWind(x=0, y=0):
     os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (x, y)
 
     w, h = 263, 187
-    if screen is None:
-        screen = pygame.display.set_mode((w, h))
-        pygame.display.set_icon(pygame.image.load("icon.png"))
+    screen = pygame.display.set_mode((w, h))
+    pygame.display.set_icon(pygame.image.load("icon.png"))
 
     # RENDER YOUR GAME HERE
     ghost = pygame.image.load("ghost.png").convert()

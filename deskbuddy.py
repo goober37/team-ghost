@@ -27,11 +27,11 @@ while running:
     #     if event.type == pygame.QUIT:
     #         running = False
 
-    with open("running.txt", "r", encoding="utf-8") as f:
-        running = f
-    
     rendghost.makeWind(ghox, ghoy)
     praise.PraiseUser()
+
+    with open("running.txt", "r", encoding="utf-8") as f:
+        running = f
 
     ghox = ghox + np.random.randint(-30,30)
     ghoy = ghoy + np.random.randint(-30,30)
