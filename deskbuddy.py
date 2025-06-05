@@ -15,7 +15,7 @@ running = True
 bigx,bigy = pygame.display.get_desktop_sizes()[0]
 screenborders = pygame.Rect(0,0,bigx,bigy)
 ghop = pygame.Rect(bigx/2,bigy/2,263,187) #ghost position as a rect
-ghov = [10,10] #ghost velocity as a rect
+ghov = [20,20] #ghost velocity as a rect
 
 if not pygame.mixer.get_init():
     pygame.mixer.init()
