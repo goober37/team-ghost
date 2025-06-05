@@ -6,7 +6,6 @@ import os
 import rendghost
 import numpy as np
 
-#test
 
 # pygame setup
 pygame.init()
@@ -16,7 +15,7 @@ running = True
 bigx,bigy = pygame.display.get_desktop_sizes()[0]
 ghox, ghoy = bigx/2,bigy/2
 
-# --- MUSIC SETUP: Only run this ONCE before the loop ---
+# music setup
 if not pygame.mixer.get_init():
     pygame.mixer.init()
 pygame.mixer.music.load("spooktune.mp3")
@@ -24,7 +23,7 @@ pygame.mixer.music.play(-1)
 while running:
     # poll for events
     # pygame.QUIT event means the user clicked X to close your window
-    # for event in pygame.event.get():
+    # for event in pygame.event.get()
     #     if event.type == pygame.QUIT:
     #         running = False
 
