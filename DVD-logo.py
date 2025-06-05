@@ -6,19 +6,20 @@ screen = pg.display.set_mode()
 clock = pg.time.Clock()
 boundx, boundy = pg.display.get_window_size()
 running = True
-textposx = 0
-textposy = 0
-textvel = [10,10]
+textposx = 1
+textposy = 1
+textvelx, textvely = 10,10
 
-def bounceInner(bound=pg.Rect(0,0,100,100), inner=pg.Rect(0,0,10,10),vel=[10,10]):
+def bounceInner(bound=pg.Rect(0,0,100,100), inner=pg.Rect(0,0,10,10),velx=0,vely=0):
     if inner[0]<=bound[0] or inner[0]+inner[2] >= bound[2]:
-        vel[0] *= -1
-        inner = inner.move(vel[0],0)
-        return vel
+        velx *= -1
+        inner = inner.move(velx , 0)
+        return velx, vely, inner
     if inner[1] <= bound[1] or inner[1] + inner[3] >= bound[3]:
-        vel[1] *= -1
-        inner = inner.move(0,vel[1])
-        return vel
+        vely *= -1
+        inner = inner.move(0 , vely)
+        return velx, vely, inner
+    return velx, vely, inner
 
 while running:
     # poll for events
@@ -37,11 +38,12 @@ while running:
         textpos = text.get_rect(x=textposx, y=textposy)
         screen.blit(text, textpos)
         #move font
-        textposx =  textvel[0]
-        textposy += textvel[1]
-        textvel = bounceInner([0,0,boundx,boundy],textpos,textvel)
+        textposx += textvelx
+        textposy += textvely
+        if bounceInner([0,0,boundx,boundy],textpos, textvelx, textvely) is None:
+            print("hlep nothing")
+        textvelx, textvely, textpos = bounceInner([0,0,boundx,boundy],textpos, textvelx, textvely)
 
-    
     #cleanup
     pg.display.flip()
     clock.tick(60)
