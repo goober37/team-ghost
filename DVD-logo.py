@@ -35,7 +35,7 @@ while running:
     # RENDER YOUR GAME HERE
     if pg.font:
         #move font
-        textpos.move(textvelx,textvely)
+        textpos = textpos.move(textvelx,textvely)
         textvelx, textvely, textpos = bounceInner([0,0,boundx,boundy],textpos, textvelx, textvely)
         #render font
         screen.blit(text, textpos)
