@@ -11,14 +11,12 @@ textposy = 1
 textvelx, textvely = 10,10
 
 def bounceInner(bound=pg.Rect(0,0,100,100), inner=pg.Rect(0,0,10,10),velx=0,vely=0):
-    if inner[0]<=bound[0] or inner[0]+inner[2] >= bound[2]:
+    if inner[0] <= bound[0] or inner[0]+inner[2] >= bound[0]+bound[2]:
         velx *= -1
         inner = inner.move(velx , 0)
-        return velx, vely, inner
-    if inner[1] <= bound[1] or inner[1] + inner[3] >= bound[3]:
+    if inner[1] <= bound[1] or inner[1] + inner[3] >= bound[1] + bound[3]:
         vely *= -1
         inner = inner.move(0 , vely)
-        return velx, vely, inner
     return velx, vely, inner
 
 while running:
@@ -40,10 +38,7 @@ while running:
         #move font
         textposx += textvelx
         textposy += textvely
-        if bounceInner([0,0,boundx,boundy],textpos, textvelx, textvely) is None:
-            print("hlep nothing")
         textvelx, textvely, textpos = bounceInner([0,0,boundx,boundy],textpos, textvelx, textvely)
-
     #cleanup
     pg.display.flip()
     clock.tick(60)
