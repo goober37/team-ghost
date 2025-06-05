@@ -27,7 +27,9 @@ while running:
     #     if event.type == pygame.QUIT:
     #         running = False
 
-    running = 
+    with open("running.txt", "r", encoding="utf-8") as f:
+        running = f
+    
     rendghost.makeWind(ghox, ghoy)
     praise.PraiseUser()
 

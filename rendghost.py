@@ -29,13 +29,20 @@ def makeWind(x=0, y=0):
     pygame.time.wait(300)
     if pygame.key.get_pressed()[pygame.K_SPACE] and spaceHeld:
         print("bye")
-        return False
+        with open("running.txt", "w", encoding="utf-8") as f:
+            f = False
+        pygame.quit()
     elif pygame.key.get_pressed()[pygame.K_SPACE] and not spaceHeld:
         spaceHeld = True
         print("once")
-        return True
+        with open("running.txt", "w", encoding="utf-8") as f:
+            f = True
+        pygame.quit()
     elif not pygame.key.get_pressed()[pygame.K_SPACE]:
         spaceHeld = False
         print("no")
-        return True
-    pygame.quit()
+        with open("running.txt", "w", encoding="utf-8") as f:
+            f = True
+        pygame.quit()
+    else:
+        print("I don't know what you're doing, but it's too magical for this humble program")
