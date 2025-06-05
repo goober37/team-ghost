@@ -15,25 +15,19 @@ font = pg.font.Font(None, 64)
 text = font.render("DVD", True, (255, 255, 255))
 textpos = text.get_rect(x=1, y=1)
 
-def bounceInner(bound=pg.Rect(0,0,100,100), inner=pg.Rect(0,0,10,10),vel=[10,10], noise=0):
+def bounceInner(bound=pg.Rect(0,0,100,100), inner=pg.Rect(0,0,10,10),vel=[10,10]):
     pg.mixer.init()
     if inner[0] <= bound[0] or inner[0]+inner[2] >= bound[0]+bound[2]:
-        if noise==0:
-            0+0
-        else:
-            pg.mixer.music.load(noise)
-            pg.mixer.music.play()
         vel[0] *= -1
         inner = inner.move(vel[0] , 0)
+        bump = True
     if inner[1] <= bound[1] or inner[1] + inner[3] >= bound[1] + bound[3]:
-        if noise==0:
-            0+0
-        else:
-            pg.mixer.music.load(noise)
-            pg.mixer.music.play()
         vel[1] *= -1
         inner = inner.move(0 , vel[1])
-    return inner, vel
+        bump = True
+    else:
+        bump = False
+    return inner, vel, bump
 
 # while running:
 #     # poll for events
