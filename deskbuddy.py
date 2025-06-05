@@ -13,7 +13,9 @@ screen = pygame.display.set_mode((1,1))
 clock = pygame.time.Clock()
 running = True
 bigx,bigy = pygame.display.get_desktop_sizes()[0]
-ghop = pygame.rect(bigx/2,bigy/2,263,187)
+print(bigx, bigy)
+screenborders = pygame.Rect(0,0,bigx,bigy)
+ghop = pygame.Rect(bigx/2,bigy/2,263,187)
 ghov = [5,5]
 
 if not pygame.mixer.get_init():
@@ -23,7 +25,7 @@ pygame.mixer.music.play(-1)
 
 while running:
     rendghost.makeWind(ghop[0], ghop[1])
-    ghop, ghov = dvd.bounceInner([pygame.rect(0,0,bigx,bigy)], ghop, ghov)
+    ghop, ghov = dvd.bounceInner(screenborders, ghop, ghov)
     with open("running.txt", "r", encoding="utf-8") as f:
         running = f
     
