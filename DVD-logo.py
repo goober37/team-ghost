@@ -1,14 +1,18 @@
 import pygame as pg
 
+#set everything up
 pg.init()
 pg.font.init()
 screen = pg.display.set_mode()
 clock = pg.time.Clock()
 boundx, boundy = pg.display.get_window_size()
 running = True
-textposx = 1
-textposy = 1
 textvelx, textvely = 10,10
+
+#math the font
+font = pg.font.Font(None, 64)
+text = font.render("DVD", True, (255, 255, 255))
+textpos = text.get_rect(x=1, y=1)
 
 def bounceInner(bound=pg.Rect(0,0,100,100), inner=pg.Rect(0,0,10,10),velx=0,vely=0):
     if inner[0] <= bound[0] or inner[0]+inner[2] >= bound[0]+bound[2]:
@@ -30,16 +34,15 @@ while running:
 
     # RENDER YOUR GAME HERE
     if pg.font:
-        #render font
-        font = pg.font.Font(None, 64)
-        text = font.render("DVD", True, (255, 255, 255))
-        textpos = text.get_rect(x=textposx, y=textposy)
-        screen.blit(text, textpos)
         #move font
-        textposx += textvelx
-        textposy += textvely
+        textpos.move(textvelx,textvely)
         textvelx, textvely, textpos = bounceInner([0,0,boundx,boundy],textpos, textvelx, textvely)
+        #render font
+        screen.blit(text, textpos)
+    #draw debug stuff
+    pg.draw.rect(screen,(255,0,0),textpos, width=3)
+    pg.draw.circle(screen,"green",(textpos[0],textpos[1]),3)
     #cleanup
     pg.display.flip()
-    clock.tick(60)
+    clock.tick(2)
 pg.quit()
