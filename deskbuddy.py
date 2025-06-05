@@ -20,12 +20,6 @@ pygame.mixer.music.load("spooktune.mp3")
 pygame.mixer.music.play(-1) 
 
 while running:
-    # poll for events
-    # pygame.QUIT event means the user clicked X to close your window
-    # for event in pygame.event.get():
-    #     if event.type == pygame.QUIT:
-    #         running = False
-
     rendghost.makeWind(ghox, ghoy)
 
     with open("running.txt", "r", encoding="utf-8") as f:
