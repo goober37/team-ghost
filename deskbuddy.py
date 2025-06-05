@@ -13,14 +13,9 @@ screen = pygame.display.set_mode((1,1))
 clock = pygame.time.Clock()
 running = True
 bigx,bigy = pygame.display.get_desktop_sizes()[0]
-screenborders = pygame.Rect(0,0,bigx,bigy)
-ghop = pygame.Rect(bigx/2,bigy/2,263,187) #ghost position as a rect
-ghov = [20,20] #ghost velocity as a rect
-
-if not pygame.mixer.get_init():
-    pygame.mixer.init()
-    pygame.mixer.music.load("spooktune.mp3")
-    pygame.mixer.music.play(-1) 
+screenborders = pygame.Rect(0,0,bigx,bigy) #screen as a rect
+ghop = pygame.Rect(0, 0, 263, 187) #ghost position as a rect
+ghov = [30,30] #ghost velocity as a rect
 
 while running:
     #move the ghost window
