@@ -23,8 +23,6 @@ def makeWind(x=0, y=0):
     # flip() the display to put your work on screen
     pygame.display.flip()
 
-    pygame.event.pump()  # Make sure key states are updated
-
     pygame.time.wait(300)
     if pygame.key.get_pressed()[pygame.K_SPACE] and spaceHeld:
         print("bye")

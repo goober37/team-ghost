@@ -19,13 +19,13 @@ ghov = [20,20] #ghost velocity as a rect
 
 if not pygame.mixer.get_init():
     pygame.mixer.init()
-pygame.mixer.music.load("spooktune.mp3")
-pygame.mixer.music.play(-1) 
+    pygame.mixer.music.load("spooktune.mp3")
+    pygame.mixer.music.play(-1) 
 
 while running:
     #move the ghost window
     ghop = pygame.Rect(ghop[0]+ghov[0],ghop[1]+ghov[1],ghop[2],ghop[3])
-    ghop, ghov = dvd.bounceInner(screenborders, ghop, ghov)
+    ghop, ghov = dvd.bounceInner(screenborders, ghop, ghov, "spooktune.mp3")
     #make the ghost window
     rendghost.makeWind(ghop[0], ghop[1])
     
