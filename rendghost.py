@@ -1,5 +1,6 @@
 import pygame
 import os
+import praise
 
 spaceHeld = False
 
@@ -29,6 +30,7 @@ def makeWind(x=0, y=0):
         print("bye")
         with open("running.txt", "w", encoding="utf-8") as f:
             f = False
+        praise.PraiseUser()
         pygame.quit()
     elif pygame.key.get_pressed()[pygame.K_SPACE] and not spaceHeld:
         spaceHeld = True

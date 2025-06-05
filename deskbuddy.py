@@ -1,7 +1,6 @@
 #import tkinter as tk
 #from tkinter import messagebox
 import pygame
-import praise
 import os
 import rendghost
 import numpy as np
@@ -28,7 +27,6 @@ while running:
     #         running = False
 
     rendghost.makeWind(ghox, ghoy)
-    praise.PraiseUser()
 
     with open("running.txt", "r", encoding="utf-8") as f:
         running = f
