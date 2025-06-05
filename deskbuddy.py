@@ -15,7 +15,6 @@ running = True
 bigx,bigy = pygame.display.get_desktop_sizes()[0]
 ghox, ghoy = bigx/2,bigy/2
 
-
 if not pygame.mixer.get_init():
     pygame.mixer.init()
 pygame.mixer.music.load("spooktune.mp3")

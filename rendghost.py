@@ -34,7 +34,9 @@ def makeWind(x=0, y=0):
     elif pygame.key.get_pressed()[pygame.K_SPACE] and not spaceHeld:
         spaceHeld = True
         print("once")
+        return True
     elif not pygame.key.get_pressed()[pygame.K_SPACE]:
         spaceHeld = False
         print("no")
-    return True
+        return True
+    pygame.quit()
