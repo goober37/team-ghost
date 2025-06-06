@@ -14,7 +14,7 @@ clock = pygame.time.Clock()
 running = True
 bigx,bigy = pygame.display.get_desktop_sizes()[0]
 screenborders = pygame.Rect(0,0,bigx,bigy) #screen as a rect
-ghop = pygame.Rect((2*bigx/3), (2*bigy/3), 263, 187) #ghost position as a rect
+ghop = pygame.Rect((bigx/2), (bigy/2), 263, 187) #ghost position as a rect
 ghov = [30,30] #ghost velocity as a rect
 
 while running:
