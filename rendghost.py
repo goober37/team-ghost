@@ -18,7 +18,7 @@ def makeWind(x=0, y=0, image="ghost.png"):
     # RENDER YOUR GAME HERE
     ghost = pygame.image.load(image).convert()
     screen.blit(ghost, (0, 0))
-    pygame.display.set_caption("Ghost (spooky)")
+    pygame.display.set_caption("Ghost (spooky)(she/her)")
 
     # flip() the display to put your work on screen
     pygame.display.flip()
