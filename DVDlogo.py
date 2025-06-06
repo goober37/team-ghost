@@ -21,16 +21,13 @@ def bounceInner(bound=pg.Rect(0,0,100,100), inner=pg.Rect(0,0,10,10),vel=[10,10]
         vel[0] *= -1
         inner = inner.move(vel[0] , 0)
         bump = True
-        type = "x"
     elif inner[1] <= bound[1] or inner[1] + inner[3] >= bound[1] + bound[3]:
         vel[1] *= -1
         inner = inner.move(0 , vel[1])
         bump = True
-        type = "y"
     else:
         bump = False
-        type = ""
-    return inner, vel, bump, type
+    return inner, vel, bump
 
 # while running:
 #     # poll for events
