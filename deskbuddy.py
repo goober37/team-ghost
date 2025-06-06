@@ -15,8 +15,10 @@ running = True
 bigx,bigy = pygame.display.get_desktop_sizes()[0]
 screenborders = pygame.Rect(0,0,bigx,bigy) #screen as a rect
 ghop = pygame.Rect((bigx/2)-131, (bigy/2)-143, 263, 187) #ghost position as a rect
-ghov = [30,30] #ghost velocity as a rect
-
+ghov = [30*np.random.randint(-1,1),30*np.random.randint(-1,1)] #ghost velocity as a list
+#makes sure that ghov != 0
+while ghov[0] == 0 or ghov[1] == 0:
+    ghov = [30*np.random.randint(-1,1),30*np.random.randint(-1,1)]
 while running:
     #move the ghost window
     ghop = pygame.Rect(ghop[0]+ghov[0],ghop[1]+ghov[1],ghop[2],ghop[3])
