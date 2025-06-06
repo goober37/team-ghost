@@ -24,13 +24,11 @@ while running:
     #make the ghost window (he might be hurt)
     if bump:
         rendghost.makeWind(ghop[0], ghop[1],"ghosthurt.png")
-    else:
-        rendghost.makeWind(ghop[0], ghop[1])
-    #maybe play a noise
-    if bump:
         pygame.mixer.init()
         pygame.mixer.music.load("spooktune.mp3")
         pygame.mixer.music.play(-1)
+    else:
+        rendghost.makeWind(ghop[0], ghop[1])
     clock.tick(30)  # limits FPS to 30
 
 pygame.quit()

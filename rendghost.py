@@ -25,16 +25,13 @@ def makeWind(x=0, y=0, image="ghost.png"):
 
     pygame.time.wait(300)
     if pygame.key.get_pressed()[pygame.K_SPACE] and spaceHeld:
-        print("bye")
         praise.PraiseUser()
         pygame.quit()
     elif pygame.key.get_pressed()[pygame.K_SPACE] and not spaceHeld:
         spaceHeld = True
-        print("once")
         pygame.quit()
     elif not pygame.key.get_pressed()[pygame.K_SPACE]:
         spaceHeld = False
-        print("no")
         pygame.quit()
     else:
         print("I don't know what you're doing, but it's too magical for this humble program")
