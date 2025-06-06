@@ -22,7 +22,7 @@ while ghov[0] == 0 or ghov[1] == 0:
 while running:
     #move the ghost window
     ghop = pygame.Rect(ghop[0]+ghov[0],ghop[1]+ghov[1],ghop[2],ghop[3])
-    ghop, ghov, bump = dvd.bounceInner(screenborders, ghop, ghov)
+    ghop, ghov, bump = dvd.bounceInner(screenborders, ghop, ghov, True)
     #make the ghost window (he might be hurt)
     if bump:
         rendghost.makeWind(ghop[0], ghop[1],"ghosthurt.png")
